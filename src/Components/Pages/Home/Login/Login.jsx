@@ -58,7 +58,7 @@ const Login = () => {
 
     return (
         <div
-            className="max-w-7xl mx-auto">
+            className="max-w-7xl mx-auto mt-20">
             <>
                 <div>
                     <h2

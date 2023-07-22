@@ -10,6 +10,9 @@ import ErrorPage from './Components/Utilities/ErrorPage/ErrorPage';
 import Login from './Components/Pages/Home/Login/Login';
 import Registration from './Components/Pages/Home/Registration/Registration';
 import AuthProvider from './Components/Utilities/Providers/AuthProvider';
+import Admission from './Components/Pages/Home/Admission/Admission';
+import MyCollege from './Components/Pages/Home/MyCollege/MyCollege';
+import Colleges from './Components/Pages/Home/Colleges/Colleges';
 
 const router = createBrowserRouter([
   {
@@ -24,7 +27,19 @@ const router = createBrowserRouter([
       {
         path: "/registration",
         element: <Registration />
-      }
+      },
+      {
+        path: "/admission",
+        element: <Admission />
+      },
+      {
+        path: "/myCollege",
+        element: <MyCollege />
+      },
+      {
+        path: "/colleges",
+        element: <Colleges />
+      },
     ]
   },
 ]);

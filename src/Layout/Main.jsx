@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 
 const Main = () => {
     return (
-        <div>
+        <div className="overflow-y-hidden">
             <NavBar />
             <Outlet />
             <Footer />

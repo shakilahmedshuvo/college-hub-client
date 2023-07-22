@@ -32,18 +32,21 @@ const NavBar = () => {
             </li>
             <li className="text-lg">
                 <Link
+                    to="/colleges"
                     className="hover:text-gray-900 hover:text-2xl">
                     <GiBookAura /> Colleges
                 </Link>
             </li>
             <li className="text-lg">
                 <Link
+                    to="/admission"
                     className="hover:text-gray-900 hover:text-2xl">
                     <MdOutlineCastForEducation /> Admission
                 </Link>
             </li>
             <li className="text-lg">
                 <Link
+                    to="/myCollege"
                     className="hover:text-gray-900 hover:text-2xl">
                     <ImBooks /> My College
                 </Link>
