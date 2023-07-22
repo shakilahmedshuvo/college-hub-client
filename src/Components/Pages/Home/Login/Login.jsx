@@ -173,7 +173,7 @@ const Login = () => {
                                             className="form-control mt-6"
                                             type="submit">
                                             <button
-                                                className="btn bg-yellow-400 text-white font-bold hover:text-black">
+                                                className="btn bg-yellow-400 text-white font-bold hover:text-black link-hover">
                                                 Login
                                             </button>
                                         </div>

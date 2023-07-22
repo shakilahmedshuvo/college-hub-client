@@ -32,12 +32,12 @@ const Registration = () => {
             <>
                 <div>
                     <h2
-                        className="text-4xl font-bold text-center">
-                        Please Sign Up
+                        className="text-4xl font-bold text-center text-yellow-400">
+                        Please Registration
                     </h2>
                     <p
                         className="text-lg font-bold text-center mt-2">
-                        Sign Up here
+                        Registration here
                     </p>
                 </div>
                 <div className="font-bold pb-10" data-aos="zoom-out">
@@ -56,8 +56,8 @@ const Registration = () => {
                                 className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                                 <div className="card-body justify-around">
                                     <h1
-                                        className="text-center text-2xl py-1 text-indigo-600">
-                                        ART SUMMER CAMP
+                                        className="text-center text-2xl py-1 text-yellow-400">
+                                        College Hub
                                     </h1>
                                     <hr
                                         className="border-b border-solid border-2" />
@@ -69,7 +69,7 @@ const Registration = () => {
                                             <label
                                                 className="label">
                                                 <span
-                                                    className="label-text">
+                                                    className="label-text text-yellow-400">
                                                     Enter Your Name
                                                 </span>
                                             </label>
@@ -94,7 +94,7 @@ const Registration = () => {
                                             <label
                                                 className="label">
                                                 <span
-                                                    className="label-text">
+                                                    className="label-text text-yellow-400">
                                                     Enter Your Email
                                                 </span>
                                             </label>
@@ -119,7 +119,7 @@ const Registration = () => {
                                             <label
                                                 className="label">
                                                 <span
-                                                    className="label-text">
+                                                    className="label-text text-yellow-400">
                                                     Enter Your Password
                                                 </span>
                                             </label>
@@ -166,9 +166,9 @@ const Registration = () => {
                                         <div
                                             className="form-control">
                                             <label
-                                                className="label">
+                                                className="label ">
                                                 <span
-                                                    className="label-text">
+                                                    className="label-text text-yellow-400">
                                                     Enter Your Photo URL
                                                 </span>
                                             </label>
@@ -187,7 +187,7 @@ const Registration = () => {
                                                 </span>}
                                         </div>
                                         {/* google login start */}
-                                        <div>
+                                        <div className="mt-2">
                                             <SocialLogin />
                                         </div>
                                         {/* google login end */}
@@ -196,10 +196,9 @@ const Registration = () => {
                                             <small
                                                 className="text-neutral-700 mx-auto">
                                                 Already Have an Account?
-                                                <br />
                                                 Please <Link
                                                     to='/login'
-                                                    className="font-extrabold  text-indigo-600">
+                                                    className="font-extrabold  text-yellow-400 hover:text-black link-hover">
                                                     Login
                                                 </Link>
                                             </small>
@@ -208,7 +207,7 @@ const Registration = () => {
                                         <div
                                             className="form-control mt-5">
                                             <input
-                                                className="btn bg-indigo-900 text-white hover:text-black"
+                                                className="btn bg-yellow-400 text-white hover:text-black"
                                                 type="submit"
                                                 value="Registration" />
                                         </div>
