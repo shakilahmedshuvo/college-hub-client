@@ -161,7 +161,7 @@ const Login = () => {
                                                     Don't Have an Account?
                                                     <br />
                                                     New to Art Summer Camp? Please <Link
-                                                        to='/signUp'
+                                                        to='/registration'
                                                         className="font-extrabold text-yellow-400 hover:link">
                                                         Sign Up
                                                     </Link>
