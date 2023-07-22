@@ -159,7 +159,7 @@ const Footer = () => {
                 </footer>
             </div>
             <footer
-                className="footer  bg-black px-10 py-3 mt-6">
+                className="footer bg-black px-10 py-3 mt-6">
                 <small
                     className="max-w-7xl mx-auto text-slate-300 py-0">
                     @ ALL RIGHTS RESERVED BY COLLEGE HUB SAS.
