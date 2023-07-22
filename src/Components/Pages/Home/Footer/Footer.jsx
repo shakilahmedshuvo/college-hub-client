@@ -157,15 +157,15 @@ const Footer = () => {
                         </a>
                     </div>
                 </footer>
-                <footer className="footer px-10 py-4">
-                    <small
-                        className="text-slate-300">
-                        @ ALL RIGHTS RESERVED BY KIDS TOYS WORLD SAS.
-                        <br />
-                        © 2023 Trademarks and brands are the property of their respective owners.
-                    </small>
-                </footer>
             </div>
+            <footer
+                className="footer  bg-black px-10 py-3 mt-6">
+                <small
+                    className="max-w-7xl mx-auto text-slate-300 py-0">
+                    @ ALL RIGHTS RESERVED BY COLLEGE HUB SAS.
+                    © 2023 Trademarks and brands are the property of their respective owners.
+                </small>
+            </footer>
         </div>
     );
 };
