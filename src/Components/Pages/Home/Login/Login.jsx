@@ -1,8 +1,9 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import useAuth from "../../../Utilities/Hooks/useAuth";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import SocialLogin from "../../../Shared/SocialLogin";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
     // show pass and hide pass
@@ -12,6 +13,8 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+    const { resetPassword } = useAuth();
+    const emailRef = useRef();
 
     // handleUserLogin function
     const handleUserLogin = (event) => {
@@ -26,15 +29,31 @@ const Login = () => {
         userLogIn(email, password).then(result => {
             const logIn = result.user;
             // show the toast
-            // toast.success('Log in Successful')
+            toast.success('Log in Successful')
             navigate(from, { replace: true })
         })
             .catch(error => {
-                // toast.error('Wrong Password')
+                toast.error('Wrong Password')
                 console.log(error);
             })
         // reset the from
         form.reset()
+    }
+
+    // handleReset function
+    const handleReset = () => {
+        const passReSet = emailRef.current.value;
+        if (!passReSet) {
+            toast.error('Set your email on email field')
+            return
+        }
+        resetPassword(passReSet)
+            .then(() => {
+                toast.success('Please Check Your Email')
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
     }
 
     return (
@@ -84,6 +103,7 @@ const Login = () => {
                                             <input
                                                 name="email"
                                                 type="text"
+                                                ref={emailRef}
                                                 placeholder="Enter Your Email"
                                                 className="input input-bordered"
                                                 required />
@@ -124,6 +144,13 @@ const Login = () => {
                                                     }
                                                 </small>
                                             </p>
+                                            <label
+                                                onClick={handleReset}
+                                                className="text-slate-600 relative bottom-4 link link-hover">
+                                                <small>
+                                                    Forget Password?
+                                                </small>
+                                            </label>
                                             {/* sign in with google start */}
                                             <SocialLogin />
                                             {/* sign in with google end */}

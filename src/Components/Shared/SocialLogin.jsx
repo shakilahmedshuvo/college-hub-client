@@ -17,11 +17,12 @@ const SocialLogin = () => {
                 navigate(from, { replace: true });
             })
     }
+
     return (
         <div
             className="w-full max-w-sm mx-auto">
             {/* divider */}
-            <div className="divider">
+            <div className="divider mt-0">
                 Or
             </div>
             {/* Google sigIn start */}
