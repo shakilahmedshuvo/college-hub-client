@@ -1,37 +1,94 @@
 import { Link } from "react-router-dom";
-import { FaHome, FaChalkboardTeacher, FaRegAddressBook } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+import { FiLogOut, FiLogIn } from "react-icons/fi";
+import { MdOutlineCastForEducation } from "react-icons/md";
+import { GiBookAura } from "react-icons/gi";
+import { ImBooks } from "react-icons/im";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { BsInfoCircleFill } from "react-icons/bs";
 import { useEffect, useState } from "react";
-// nav item 
-const navBarItems =
-    <>
-        <li className="text-lg">
-            <a
-                className="hover:text-gray-900 hover:text-2xl">
-                <FaHome /> Home
-            </a>
-        </li>
-        <li className="text-lg">
-            <a
-                className="hover:text-gray-900 hover:text-2xl">
-                <BsInfoCircleFill /> About
-            </a>
-        </li>
-        <li className="text-lg">
-            <a
-                className="hover:text-gray-900 hover:text-2xl">
-                <FaChalkboardTeacher />Projects
-            </a>
-        </li>
-        <li className="text-lg">
-            <a
-                className="hover:text-gray-900 hover:text-2xl">
-                <FaRegAddressBook />Contact
-            </a>
-        </li>
-    </>
+import useAuth from "../../../Utilities/Hooks/useAuth";
+
 const NavBar = () => {
+    const { user, logOut } = useAuth();
+
+    // handleLogOut function
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(error => console.log(error));
+    }
+
+    // nav item 
+    const navBarItems =
+        <>
+            <li className="text-lg">
+                <Link
+                    to="/"
+                    className="hover:text-gray-900 hover:text-2xl">
+                    <FaHome /> Home
+                </Link>
+            </li>
+            <li className="text-lg">
+                <Link
+                    className="hover:text-gray-900 hover:text-2xl">
+                    <GiBookAura /> Colleges
+                </Link>
+            </li>
+            <li className="text-lg">
+                <Link
+                    className="hover:text-gray-900 hover:text-2xl">
+                    <MdOutlineCastForEducation /> Admission
+                </Link>
+            </li>
+            <li className="text-lg">
+                <Link
+                    className="hover:text-gray-900 hover:text-2xl">
+                    <ImBooks /> My College
+                </Link>
+            </li>
+            {/* conditional rendering */}
+            {
+                user ?
+                    <>
+                        {/* tooltip show and the profile picture */}
+                        <div
+                            className="tooltip tooltip-info tooltip-bottom flex justify-center items-center font-bold"
+                            data-tip={user.displayName}>
+                            <img
+                                className="w-12 h-12 rounded-full"
+                                src=
+                                {
+                                    user?.photoURL
+                                }
+                                alt="" />
+                        </div>
+                        <li className="text-lg">
+                            <Link
+                                onClick={handleLogOut}
+                                className="btn-ghost">
+                                Log Out <FiLogOut
+                                    className="text-2xl">
+                                </FiLogOut>
+                            </Link>
+                        </li>
+                    </>
+                    :
+                    <>
+                        <li className="text-lg">
+                            <Link
+                                className="btn-ghost"
+                                to="login">
+                                Log In <FiLogIn
+                                    className="text-2xl text-slate-200">
+                                </FiLogIn>
+                            </Link>
+                        </li>
+                    </>
+            }
+        </>
+
     // dark mode toggler
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -56,13 +113,14 @@ const NavBar = () => {
                 className="navbar max-w-7xl mx-auto p-0">
                 <div
                     className="navbar-start ">
+                    <img
+                        className="lg:ms-0 ms-2 w-[15%] rounded-full"
+                        src="https://img.freepik.com/premium-vector/university-logo-design-vector-template_644408-1816.jpg?w=740"
+                        alt="" />
                     <Link
                         to='/'
                         className="btn btn-ghost normal-case text-3xl font-bold text-center">
-                        Shakil Ahmed<span
-                            className="text-2xl font-normal relative top-3 right-1">
-                            &#174;
-                        </span>
+                        College Hub
                     </Link>
                 </div>
                 <div
@@ -111,9 +169,10 @@ const NavBar = () => {
                             className="btn btn-ghost lg:hidden">
                             <HiOutlineMenuAlt3 className="text-3xl ms-3" />
                         </label>
+
                         <ul
                             tabIndex={0}
-                            className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52 relative right-0 bg-black">
+                            className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52 relative right-0 bg-yellow-200">
                             {navBarItems}
                         </ul>
                     </div>
