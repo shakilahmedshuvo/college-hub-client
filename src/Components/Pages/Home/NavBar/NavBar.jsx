@@ -57,7 +57,7 @@ const NavBar = () => {
                     <>
                         {/* tooltip show and the profile picture */}
                         <div
-                            className="tooltip tooltip-info tooltip-bottom flex justify-center items-center font-bold"
+                            className="tooltip tooltip-bottom flex justify-center items-center font-bold"
                             data-tip={user.displayName}>
                             <img
                                 className="w-12 h-12 rounded-full"

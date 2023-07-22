@@ -1,9 +1,9 @@
 const SearchBar = () => {
     return (
         <div
-            className="max-w-7xl mx-auto mt-16 flex justify-end">
+            className="max-w-7xl mx-auto mt-16 flex justify-end my-1">
             <div
-                className="flex items-end justify-end w-[50%] bg-white rounded-lg px-4 py-2 shadow">
+                className="flex items-end justify-end lg:w-[50%] w-full bg-white rounded-lg px-4 py-2 shadow">
                 <input
                     type="text"
                     placeholder="Search..."

@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import BestCollege from "../BestCollege/BestCollege";
 import SearchBar from "../SearchBar/SearchBar";
 
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
         <div>
             <SearchBar />
             <Banner />
-            
+            <BestCollege />
         </div>
     );
 };
