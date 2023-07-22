@@ -13,6 +13,7 @@ import AuthProvider from './Components/Utilities/Providers/AuthProvider';
 import Admission from './Components/Pages/Home/Admission/Admission';
 import MyCollege from './Components/Pages/Home/MyCollege/MyCollege';
 import Colleges from './Components/Pages/Home/Colleges/Colleges';
+import Home from './Components/Pages/Home/Home/Home';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     element: <Main />,
     children: [
+      {
+        path: "/",
+        element: < Home />
+      },
       {
         path: "/login",
         element: <Login />

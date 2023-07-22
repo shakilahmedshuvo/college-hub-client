@@ -84,7 +84,7 @@ const NavBar = () => {
                                 className="btn-ghost"
                                 to="login">
                                 Log In <FiLogIn
-                                    className="text-2xl text-slate-200">
+                                    className="text-2xl">
                                 </FiLogIn>
                             </Link>
                         </li>
