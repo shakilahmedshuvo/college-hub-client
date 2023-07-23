@@ -6,7 +6,8 @@ const ResearchPaper = () => {
     return (
         <div
             className="max-w-7xl mx-auto">
-            <div>
+            <div
+                className="mb-4">
                 <BsFiletypeDoc className="mx-auto text-6xl mt-14" />
                 <SectionTitle
                     heading={"Research Papers"}
