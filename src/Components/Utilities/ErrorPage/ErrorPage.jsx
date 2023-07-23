@@ -12,6 +12,8 @@ const ErrorPage = () => {
             </div>
             <p
                 className='font-bold text-xl py-2'>
+                404 not found
+                <br />
                 {error?.message}
             </p>
             <p
