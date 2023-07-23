@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import BestCollege from "../BestCollege/BestCollege";
+import Gallery from "../Gallery/Gallery";
 import SearchBar from "../SearchBar/SearchBar";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
             <SearchBar />
             <Banner />
             <BestCollege />
+            <Gallery />
         </div>
     );
 };
