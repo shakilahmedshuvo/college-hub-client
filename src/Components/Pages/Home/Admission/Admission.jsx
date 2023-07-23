@@ -7,7 +7,7 @@ const Admission = () => {
 
     return (
         <div
-        className="bg-indigo-50 pt-20">
+            className="bg-indigo-50 pt-20">
             <div
                 className="max-w-7xl mx-auto">
                 <div>
@@ -100,6 +100,10 @@ const Admission = () => {
                                 name="date"
                                 className="input input-bordered" />
                         </div>
+                        <input
+                            type="file"
+                            name="image"
+                            className="file-input file-input-bordered file-input-warning w-full max-w-xs" />
                     </div>
                     <div className="form-control mt-6">
                         <input
