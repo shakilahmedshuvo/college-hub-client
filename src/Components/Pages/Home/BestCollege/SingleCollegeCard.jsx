@@ -1,4 +1,5 @@
 import { FaAngleDoubleRight } from "react-icons/fa";
+import { SlCalender } from "react-icons/sl";
 
 const SingleCollegeCard = ({ data }) => {
     const { collegeName, collegeImg, admissionDates, events, research, sports } = data;
@@ -19,11 +20,22 @@ const SingleCollegeCard = ({ data }) => {
                     {collegeName}
                 </h2>
                 <p>
-                   Admission Dates
+                    Admission Dates
                 </p>
+                <div
+                    className="flex items-center">
+                    <p
+                        className="flex items-center justify-evenly">
+                        <SlCalender />{admissionDates?.startDate}
+                    </p>
+                    <span>-</span>
+                    <p
+                        className="flex items-center justify-evenly">
+                        <SlCalender />{admissionDates?.endDate}
+                    </p>
+                </div>
                 <div>
-                    <p></p>
-                    <p></p>
+                    
                 </div>
                 <div
                     className="card-actions">
