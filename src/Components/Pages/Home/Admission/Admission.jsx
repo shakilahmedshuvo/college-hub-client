@@ -8,50 +8,6 @@ import AdmissionTable from "./AdmissionTable";
 const Admission = () => {
     const { user } = useAuth();
 
-    // handleBookServices function
-    const handleAdmission = event => {
-        // stop the form reload
-        event.preventDefault();
-
-        // get the value form the filed
-        const form = event.target;
-        const name = form.name.value;
-        const subject = form.subject.value;
-        const email = user?.email;
-        const phone = form.phone.value;
-        const address = form.address.value;
-        const date = form.date.value;
-        const imgURL = form.imgURL.value;
-
-        // get all data
-        const allData = { name, subject, email, phone, address, date, imgURL };
-
-        // data post to the backend server( mongodb )
-        fetch('http://localhost:5000/admission', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(allData)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.insertedId) {
-                    // swal 
-                    Swal.fire({
-                        position: 'top-center',
-                        icon: 'success',
-                        title: 'Your Admission has been Successfully',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    form.reset();
-                }
-            })
-    };
-
-
     // load the data
     const [data, setData] = useState([]);
     useEffect(() => {

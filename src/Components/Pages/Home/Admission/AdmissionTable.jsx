@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const AdmissionTable = ({ data }) => {
     const { id, collegeName, collegeRatings, admissionDate } = data;
     return (
@@ -20,10 +22,11 @@ const AdmissionTable = ({ data }) => {
                     {admissionDate}
                 </td>
                 <th>
-                    <button
+                    <Link
+                         to={`/admissionApply/${id}`}
                         className="btn bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90% px-10 font-bold">
                         Apply
-                    </button>
+                    </Link>
                 </th>
             </tr>
         </tbody>
