@@ -6,7 +6,7 @@ const WriteReview = () => {
         <div
             className="bg-gradient-to-r from-yellow-50 from-10% via-sky-50 via-30% to-orange-50 to-90%">
             <div
-                className="max-w-5xl mx-auto pt-20">
+                className="max-w-5xl mx-auto pt-20 pb-10">
                 <div
                     className="mb-4">
                     <MdRateReview className="mx-auto text-6xl" />
@@ -21,7 +21,7 @@ const WriteReview = () => {
                 </div>
                 <form
                     // onSubmit={}
-                    className="w-[100%] shadow-2xl font-bold mx-auto rounded-xl mb-10">
+                    className="w-[100%] shadow-2xl font-bold mx-auto rounded-xl">
                     <div className="card-body mx-auto">
                         <div
                             className="form-control">

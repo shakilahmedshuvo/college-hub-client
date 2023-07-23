@@ -45,6 +45,7 @@ const MyCollegeCard = ({ data }) => {
                 </p>
             </div>
             <Link
+                to="/writeReview"
                 className="btn bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90% font-bold my-5">
                 Give A Review
             </Link>
