@@ -21,12 +21,12 @@ const SingleTab = ({ data }) => {
                     Topic Of Research: {name}
                 </h2>
                 <p>
-                    College Name: {collegeName}
+                    Researched by Students Of: {collegeName}
                 </p>
                 {/* link */}
                 <Link
                     to={link}
-                    className="text-xl text-blue-400 link-hover flex items-center justify-center">
+                    className="text-xl text-blue-400 link-hover flex items-center justify-center hover:text-blue-300">
                     <RiExternalLinkFill className="mr-1 text-2xl" /> View Link
                 </Link>
             </div>

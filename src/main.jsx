@@ -15,6 +15,7 @@ import MyCollege from './Components/Pages/Home/MyCollege/MyCollege';
 import Colleges from './Components/Pages/Home/Colleges/Colleges';
 import Home from './Components/Pages/Home/Home/Home';
 import PrivateRoute from './Components/Utilities/PrivateRoute/PrivateRoute';
+import WriteReview from './Components/Pages/Home/Review/WriteReview';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
         path: "/colleges",
         element: <Colleges />
       },
+      {
+        path: "/writeReview",
+        element: <WriteReview />
+      }
     ]
   },
 ]);
