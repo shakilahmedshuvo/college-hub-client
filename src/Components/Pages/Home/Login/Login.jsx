@@ -58,132 +58,135 @@ const Login = () => {
 
     return (
         <div
-            className="max-w-7xl mx-auto mt-20">
-            <>
-                <div>
-                    <h2
-                        className="text-4xl font-bold text-center text-yellow-400">
-                        Please Login
-                    </h2>
-                    <p
-                        className="text-lg font-bold text-center mt-2">
-                        Login Here
-                    </p>
-                </div>
-                <div className="font-bold">
-                    <div className="hero max-w-7xl mx-auto">
-                        <div
-                            className="hero-content gap-0 justify-evenly">
+            className="bg-gradient-to-r from-yellow-50 from-10% via-sky-50 via-30% to-orange-50 to-90%">
+            <div
+                className="max-w-7xl mx-auto pt-20">
+                <>
+                    <div>
+                        <h2
+                            className="text-4xl font-bold text-center text-yellow-400">
+                            Please Login
+                        </h2>
+                        <p
+                            className="text-lg font-bold text-center mt-2">
+                            Login Here
+                        </p>
+                    </div>
+                    <div className="font-bold">
+                        <div className="hero max-w-7xl mx-auto">
                             <div
-                                className="text-center w-[50%] lg:text-left">
-                                <img
-                                    className="rounded-2xl"
-                                    src="https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7883.jpg?w=740&t=st=1690006416~exp=1690007016~hmac=43fa8066450d89e381d3cd8e77be08efd24bf0baafb6cdb3d8328172662371d0"
-                                    alt="" />
-                            </div>
-                            <div
-                                className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                                <div className="card-body">
-                                    <h1
-                                        className="text-center text-3xl py-2 text-yellow-400">
-                                        College Hub
-                                    </h1>
-                                    <hr className="border-b border-solid border-2" />
-                                    {/* login form start */}
-                                    <form
-                                        onSubmit={handleUserLogin}>
-                                        <div className="form-control">
-                                            <label
-                                                className="label">
-                                                <span
-                                                    className="label-text text-yellow-400">
-                                                    Enter Your Email
-                                                </span>
-                                            </label>
-                                            <input
-                                                name="email"
-                                                type="text"
-                                                ref={emailRef}
-                                                placeholder="Enter Your Email"
-                                                className="input input-bordered"
-                                                required />
-                                        </div>
-                                        <div
-                                            className="form-control">
-                                            <label
-                                                className="label">
-                                                <span
-                                                    className="label-text text-yellow-400">
-                                                    Enter Your Password
-                                                </span>
-                                            </label>
-                                            <input
-                                                name="password"
-                                                type={show ?
-                                                    'text'
-                                                    :
-                                                    'password'
-                                                }
-                                                placeholder="Enter Your Password"
-                                                className="input input-bordered"
-                                                required />
-                                            {/* show or hide btn */}
-                                            <p
-                                                onClick={() => setShow(!show)}
-                                                className="relative bottom-9 left-60 md:left-64 text-3xl">
-                                                <small>
-                                                    {
-                                                        show ?
-                                                            <span>
-                                                                <FaEyeSlash />
-                                                            </span>
-                                                            :
-                                                            <span>
-                                                                <FaEye />
-                                                            </span>
+                                className="hero-content gap-0 justify-evenly">
+                                <div
+                                    className="text-center w-[50%] lg:text-left">
+                                    <img
+                                        className="rounded-2xl"
+                                        src="https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7883.jpg?w=740&t=st=1690006416~exp=1690007016~hmac=43fa8066450d89e381d3cd8e77be08efd24bf0baafb6cdb3d8328172662371d0"
+                                        alt="" />
+                                </div>
+                                <div
+                                    className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                                    <div className="card-body">
+                                        <h1
+                                            className="text-center text-3xl py-2 text-yellow-400">
+                                            College Hub
+                                        </h1>
+                                        <hr className="border-b border-solid border-2" />
+                                        {/* login form start */}
+                                        <form
+                                            onSubmit={handleUserLogin}>
+                                            <div className="form-control">
+                                                <label
+                                                    className="label">
+                                                    <span
+                                                        className="label-text text-yellow-400">
+                                                        Enter Your Email
+                                                    </span>
+                                                </label>
+                                                <input
+                                                    name="email"
+                                                    type="text"
+                                                    ref={emailRef}
+                                                    placeholder="Enter Your Email"
+                                                    className="input input-bordered"
+                                                    required />
+                                            </div>
+                                            <div
+                                                className="form-control">
+                                                <label
+                                                    className="label">
+                                                    <span
+                                                        className="label-text text-yellow-400">
+                                                        Enter Your Password
+                                                    </span>
+                                                </label>
+                                                <input
+                                                    name="password"
+                                                    type={show ?
+                                                        'text'
+                                                        :
+                                                        'password'
                                                     }
-                                                </small>
-                                            </p>
-                                            <label
-                                                onClick={handleReset}
-                                                className="text-slate-600 relative bottom-4 link link-hover">
-                                                <small>
-                                                    Forget Password?
-                                                </small>
-                                            </label>
-                                            {/* sign in with google start */}
-                                            <SocialLogin />
-                                            {/* sign in with google end */}
-                                            <label
-                                                className="label mt-2 text-center">
-                                                <small
-                                                    className="text-neutral-700 text-center mx-auto">
-                                                    Don't Have an Account?
-                                                    <br />
-                                                    New to Art Summer Camp? Please <Link
-                                                        to='/registration'
-                                                        className="font-extrabold text-yellow-400 hover:link">
-                                                        Sign Up
-                                                    </Link>
-                                                </small>
-                                            </label>
-                                        </div>
-                                        {/* submit btn */}
-                                        <div
-                                            className="form-control mt-6"
-                                            type="submit">
-                                            <button
-                                                className="btn bg-yellow-400 text-white font-bold hover:text-black link-hover">
-                                                Login
-                                            </button>
-                                        </div>
-                                    </form>
+                                                    placeholder="Enter Your Password"
+                                                    className="input input-bordered"
+                                                    required />
+                                                {/* show or hide btn */}
+                                                <p
+                                                    onClick={() => setShow(!show)}
+                                                    className="relative bottom-9 left-60 md:left-64 text-3xl">
+                                                    <small>
+                                                        {
+                                                            show ?
+                                                                <span>
+                                                                    <FaEyeSlash />
+                                                                </span>
+                                                                :
+                                                                <span>
+                                                                    <FaEye />
+                                                                </span>
+                                                        }
+                                                    </small>
+                                                </p>
+                                                <label
+                                                    onClick={handleReset}
+                                                    className="text-slate-600 relative bottom-4 link link-hover">
+                                                    <small>
+                                                        Forget Password?
+                                                    </small>
+                                                </label>
+                                                {/* sign in with google start */}
+                                                <SocialLogin />
+                                                {/* sign in with google end */}
+                                                <label
+                                                    className="label mt-2 text-center">
+                                                    <small
+                                                        className="text-neutral-700 text-center mx-auto">
+                                                        Don't Have an Account?
+                                                        <br />
+                                                        New to Art Summer Camp? Please <Link
+                                                            to='/registration'
+                                                            className="font-extrabold text-yellow-400 hover:link">
+                                                            Sign Up
+                                                        </Link>
+                                                    </small>
+                                                </label>
+                                            </div>
+                                            {/* submit btn */}
+                                            <div
+                                                className="form-control mt-6"
+                                                type="submit">
+                                                <button
+                                                    className="btn bg-yellow-400 text-white font-bold hover:text-black link-hover">
+                                                    Login
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div >
-            </>
+                    </div >
+                </>
+            </div>
         </div>
     );
 };
