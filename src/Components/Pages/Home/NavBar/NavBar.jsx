@@ -111,7 +111,7 @@ const NavBar = () => {
     }, [theme]);
     return (
         <div
-            className="font-bold fixed z-10 w-full bg-yellow-400">
+            className="font-bold fixed z-10 w-full bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90%">
             <div
                 className="navbar max-w-7xl mx-auto p-0">
                 <div

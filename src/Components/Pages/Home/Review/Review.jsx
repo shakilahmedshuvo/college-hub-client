@@ -19,7 +19,7 @@ const Review = () => {
             </div>
             {/* swiper js review section */}
             <div
-                className='bg-gradient-to-r from-indigo-200 from-10% via-sky-200 via-30% to-pink-200 to-90% rounded-3xl my-12'>
+                className='bg-gradient-to-r from-yellow-100 from-10% via-sky-100 via-30% to-orange-100 to-90% rounded-3xl my-12'>
                 <Swiper
                     rewind={true}
                     navigation={true}

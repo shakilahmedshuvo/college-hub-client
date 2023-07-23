@@ -4,7 +4,7 @@ import { FiMail } from "react-icons/fi";
 const Footer = () => {
     return (
         <div
-            className=" bg-yellow-400 font-bold">
+            className="bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90% font-bold">
             <div className="max-w-7xl mx-auto">
                 <div className="items-center grid-flow-col">
                     <div
