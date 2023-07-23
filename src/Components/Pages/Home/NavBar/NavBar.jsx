@@ -70,7 +70,7 @@ const NavBar = () => {
                         <li className="text-lg">
                             <Link
                                 onClick={handleLogOut}
-                                className="btn-ghost">
+                                className="btn-ghost hover:text-gray-900 hover:text-2xl">
                                 Log Out <FiLogOut
                                     className="text-2xl">
                                 </FiLogOut>
@@ -81,7 +81,7 @@ const NavBar = () => {
                     <>
                         <li className="text-lg">
                             <Link
-                                className="btn-ghost"
+                                className="btn-ghost hover:text-gray-900 hover:text-2xl"
                                 to="login">
                                 Log In <FiLogIn
                                     className="text-2xl">

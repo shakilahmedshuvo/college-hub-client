@@ -14,6 +14,7 @@ import Admission from './Components/Pages/Home/Admission/Admission';
 import MyCollege from './Components/Pages/Home/MyCollege/MyCollege';
 import Colleges from './Components/Pages/Home/Colleges/Colleges';
 import Home from './Components/Pages/Home/Home/Home';
+import PrivateRoute from './Components/Utilities/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/myCollege",
-        element: <MyCollege />
+        element: <PrivateRoute><MyCollege /></PrivateRoute>
       },
       {
         path: "/colleges",
