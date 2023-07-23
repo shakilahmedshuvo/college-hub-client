@@ -1,4 +1,3 @@
-import { FaAngleDoubleRight } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 
 const SingleCollegeCard = ({ data }) => {
@@ -35,13 +34,21 @@ const SingleCollegeCard = ({ data }) => {
                     </p>
                 </div>
                 <div>
-                    
+                    <p>
+                        Upcoming Events: {events?.name}
+                    </p>
+                    <p>
+                        Research History: {research?.title}
+                    </p>
+                    <p>
+                        Sports: {sports?.name}
+                    </p>
                 </div>
                 <div
                     className="card-actions">
                     <button
                         className="btn font-bold btn-wide mx-auto bg-black text-white hover:text-black">
-                        <FaAngleDoubleRight />See Classes
+                        See Details
                     </button>
                 </div>
             </div>
