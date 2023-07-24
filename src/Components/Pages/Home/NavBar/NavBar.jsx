@@ -175,7 +175,7 @@ const NavBar = () => {
 
                         <ul
                             tabIndex={0}
-                            className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52 relative right-0 bg-yellow-200">
+                            className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52 relative right-0 bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90%">
                             {navBarItems}
                         </ul>
                     </div>

@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { MdRateReview } from "react-icons/md";
 import SectionTitle from '../../../Shared/SectionTitle';
 import { useEffect, useState } from 'react';
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { FaQuoteLeft, FaQuoteRight, FaStar } from "react-icons/fa";
 
 const Review = () => {
     const [data, setData] = useState([]);
@@ -61,8 +61,12 @@ const Review = () => {
                                             Email: {data?.reviewEmail}
                                         </h2>
                                         <h2
-                                            className='text-xl mb-4 text-gray-700'>
+                                            className='text-xl mb-2 text-gray-700'>
                                             College Name: {data?.collegeName}
+                                        </h2>
+                                        <h2
+                                            className='text-base pb-4 text-gray-500 flex items-center justify-center'>
+                                            <FaStar className='text-xl mr-1 text-yellow-400' /> Ratings: {data?.reviewRatings}
                                         </h2>
                                         {/* main review */}
                                         <h2

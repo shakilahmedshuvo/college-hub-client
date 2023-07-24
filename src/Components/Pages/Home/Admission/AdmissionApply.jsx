@@ -67,7 +67,7 @@ const AdmissionApply = () => {
                     className="font-bold mt-6 pb-16"
                     onSubmit={handleAdmission}>
                     <div
-                        className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
                         <div className="form-control">
                             <label className="label">
                                 <span
@@ -177,9 +177,10 @@ const AdmissionApply = () => {
                                 required />
                         </div>
                     </div>
-                    <div className="form-control mt-6">
+                    <div 
+                     className="form-control mt-6 lg:mx-0 mx-4">
                         <input
-                            className="btn border-0 bg-yellow-400 btn-block font-bold my-2"
+                            className="btn border-0 bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90% btn-block font-bold my-2"
                             type="submit"
                             value="Submit" />
                     </div>

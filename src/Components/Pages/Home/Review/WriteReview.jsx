@@ -17,9 +17,10 @@ const WriteReview = () => {
         const reviewEmail = form.reviewEmail.value;
         const collegeName = form.collegeName.value;
         const review = form.review.value;
+        const reviewRatings = form.reviewRatings.value;
 
         // get all data
-        const allData = { reviewName, reviewEmail, collegeName, review };
+        const allData = { reviewName, reviewEmail, collegeName, review, reviewRatings };
 
         // data post to the backend server( mongodb )
         fetch('http://localhost:5000/reviews', {
@@ -50,7 +51,7 @@ const WriteReview = () => {
         <div
             className="bg-gradient-to-r from-yellow-50 from-10% via-sky-50 via-30% to-orange-50 to-90%">
             <div
-                className="max-w-5xl mx-auto pt-20 pb-10">
+                className="max-w-7xl mx-auto pt-20 pb-10">
                 <div
                     className="mb-4">
                     <MdRateReview className="mx-auto text-6xl" />
@@ -63,75 +64,97 @@ const WriteReview = () => {
                         Write Here Your Experience...
                     </p>
                 </div>
+                {/* review submit form */}
                 <form
-                    onSubmit={handleReview}
-                    className="w-[100%] shadow-2xl font-bold mx-auto rounded-xl">
-                    <div className="card-body mx-auto">
+                    className="font-bold mt-6 pb-16"
+                    onSubmit={handleReview}>
+                    <div
+                        className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
                         <div
                             className="form-control">
-                            {/* name */}
-                            <label
-                                className="label">
+                            <label className="label">
                                 <span
                                     className="label-text">
-                                    * Enter Your Name?
+                                    * Enter Your Name
                                 </span>
                             </label>
                             <input
                                 type="text"
                                 name="reviewName"
-                                placeholder="Your Name"
+                                placeholder="Enter Name"
                                 defaultValue={user?.displayName}
                                 className="input input-bordered"
                                 required />
-                            {/* email */}
-                            <label
-                                className="label">
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
                                 <span
                                     className="label-text">
-                                    * Enter Your Email Address?
+                                    * Enter Your Email
                                 </span>
                             </label>
                             <input
-                                type="email"
+                                type="text"
                                 name="reviewEmail"
-                                placeholder="Your Email"
+                                placeholder="Enter Email"
                                 defaultValue={user?.email}
                                 className="input input-bordered"
                                 required />
-                            <label
-                                className="label">
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
                                 <span
                                     className="label-text">
-                                    * Enter Your College Name?
+                                    * Enter Your College Name
                                 </span>
                             </label>
                             <input
-                                type="email"
+                                type="text"
                                 name="collegeName"
-                                placeholder="Your College Name"
+                                placeholder="Enter College Name"
                                 className="input input-bordered"
                                 required />
-                            {/* Message */}
-                            <label
-                                className="label">
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
                                 <span
                                     className="label-text">
-                                    * Enter Your Review
+                                    * Enter Your Ratings Out Of 5
                                 </span>
                             </label>
-                            <textarea
-                                name="review"
-                                className="textarea textarea-warning" placeholder="Your Review"
+                            <input
+                                type="number"
+                                name="reviewRatings"
+                                min="0" 
+                                max="5"
+                                step="any"
+                                placeholder="Enter Ratings Out Of 5"
+                                className="input input-bordered"
                                 required />
                         </div>
-
                     </div>
-                    {/* input btn */}
-                    <input
-                        className="btn px-20 ms-8 mb-6 bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90% lg:w-[90%] w-[80%] font-bold"
-                        type="submit"
-                        value="Submit" />
+                    {/* Message */}
+                    <div
+                        className="form-control px-4">
+                        <label
+                            className="label">
+                            <span
+                                className="label-text">
+                                * Enter Your Review
+                            </span>
+                        </label>
+                        <textarea
+                            name="review"
+                            className="textarea textarea-warning" placeholder="Your Review"
+                            required />
+                    </div>
+                    <div
+                        className="form-control mt-6 lg:mx-0 mx-4">
+                        <input
+                            className="btn border-0 bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90% btn-block font-bold my-2"
+                            type="submit"
+                            value="Submit" />
+                    </div>
                 </form>
             </div>
         </div>
