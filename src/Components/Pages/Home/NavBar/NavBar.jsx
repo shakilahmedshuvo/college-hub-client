@@ -60,9 +60,9 @@ const NavBar = () => {
                             to="/profile"
                             className="tooltip tooltip-bottom flex justify-center items-center font-bold text-lg hover:text-gray-900 hover:text-2xl"
                             data-tip={"Tap Go Your Profile & Edit Profile"}>
-                            {user.displayName}
+                            {user?.displayName}
                             <img
-                                className="w-11 h-11 rounded-full ms-2"
+                                className="w-12 h-12 rounded-full ms-2 border-2 border-yellow-500"
                                 src=
                                 {
                                     user?.photoURL

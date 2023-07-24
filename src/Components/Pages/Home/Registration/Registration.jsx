@@ -11,20 +11,34 @@ const Registration = () => {
 
     // on submit function
     const onSubmit = data => {
-        // console.log(data)
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 // console.log(user)
-                // add name and photoURL
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        toast.success('Successfully Register')
-                        navigate('/');
+                        const savedUser = {
+                            name: data.name,
+                            email: data.email
+                        }
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(savedUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    toast.success('Your Registration Successfully')
+                                    navigate('/')
+                                }
+                            })
                     })
-                    .catch(error => console.log(error));
+                    .catch(error => console.log(error))
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log(error))
     };
 
     return (
@@ -82,7 +96,7 @@ const Registration = () => {
                                                         { required: true })
                                                     }
                                                     name="name"
-                                                    placeholder="Name"
+                                                    placeholder="Enter Name"
                                                     className="input input-bordered" />
                                                 {
                                                     errors.name &&
@@ -107,7 +121,7 @@ const Registration = () => {
                                                         { required: true })
                                                     }
                                                     name="email"
-                                                    placeholder="email"
+                                                    placeholder="Enter Email"
                                                     className="input input-bordered" />
                                                 {
                                                     errors.email &&
@@ -136,7 +150,7 @@ const Registration = () => {
                                                             pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
                                                         })
                                                     }
-                                                    placeholder="Password"
+                                                    placeholder="Enter Password"
                                                     className="input input-bordered" />
                                                 {
                                                     errors.password?.type === 'required' &&
@@ -180,7 +194,7 @@ const Registration = () => {
                                                     {...register("photoURL",
                                                         { required: true })
                                                     }
-                                                    placeholder="Photo URL"
+                                                    placeholder="Enter Photo URL"
                                                     className="input input-bordered" />
                                                 {
                                                     errors.photoURL &&
