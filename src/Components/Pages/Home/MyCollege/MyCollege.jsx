@@ -29,7 +29,8 @@ const MyCollege = () => {
                         subHeading={"Vibrant campus life, progressive academics, and commitment to social justice."}
                     ></SectionTitle>
                 </div>
-                <div>
+                <div
+                    className="py-10">
                     {
                         data.map(data => <MyCollegeCard
                             key={data._id}

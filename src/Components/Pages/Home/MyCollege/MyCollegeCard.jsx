@@ -9,7 +9,7 @@ const MyCollegeCard = ({ data }) => {
     const { name, email, phone, address, collegeName, subject, date } = data;
     return (
         <div
-            className="card border-2 px-6 py-4 my-10 border-gray-300">
+            className="card border-2 px-6 pt-4 border-gray-300">
             <h2
                 className="text-xl font-bold pt-4 text-center">
                 Student Name: {name}
