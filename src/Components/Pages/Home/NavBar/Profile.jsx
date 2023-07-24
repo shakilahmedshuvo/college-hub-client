@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import SectionTitle from "../../../Shared/SectionTitle";
+import { CgProfile } from "react-icons/cg";
 
 const Profile = () => {
     return (
@@ -11,11 +12,21 @@ const Profile = () => {
                         College Hub | Profile
                     </title>
                 </Helmet>
-                {/* <LiaGraduationCapSolid className="mx-auto text-6xl" /> */}
+                <CgProfile className="mx-auto text-6xl" />
                 <SectionTitle
-                    heading={"Admission"}
-                    subHeading={"Secure your future with us. Explore our comprehensive programs, experienced faculty, and a supportive learning environment. Join us for an enriching educational journey."}
+                    heading={"Profile"}
+                    subHeading={"Your Profile & Info"}
                 ></SectionTitle>
+            </div>
+            {/* profile section */}
+            <div
+                className="grid lg:grid-cols-3">
+                <div>
+                    1
+                </div>
+                <div className="col-span-2">
+                    2
+                </div>
             </div>
         </div>
     );
