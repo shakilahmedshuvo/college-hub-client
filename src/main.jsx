@@ -20,6 +20,7 @@ import AdmissionApply from './Components/Pages/Home/Admission/AdmissionApply';
 import Profile from './Components/Pages/Home/Profile/Profile';
 import CollegePage from './Components/Pages/Home/Colleges/CollegePage';
 import CollegeDetails from './Components/Pages/Home/Colleges/CollegeDetails';
+import ThereCollege from './Components/Pages/Home/BestCollege/ThereCollege';
 
 const router = createBrowserRouter([
   {
@@ -61,18 +62,19 @@ const router = createBrowserRouter([
         element: <Colleges />
       },
       {
-        path: "/colleges/:id",
+        path: "/colleges/:_id",
         element: <CollegeDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/bestCollege/${params._id}`)
+        loader: ({ params }) => fetch(`https://college-hub-server-hazel.vercel.app/bestCollege/${params._id}`)
+      },
+      {
+        path: "/thereCollege/:_id",
+        element: <ThereCollege />,
+        loader: ({ params }) => fetch(`https://college-hub-server-hazel.vercel.app/college/${params._id}`)
       },
       {
         path: "/writeReview",
         element: <PrivateRoute><WriteReview /></PrivateRoute>
-      },
-      {
-        path: "/writeReview",
-        element: <PrivateRoute><WriteReview /></PrivateRoute>
-      },
+      }
     ]
   },
 ]);

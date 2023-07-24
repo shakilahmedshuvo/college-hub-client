@@ -2,7 +2,7 @@ import { SlCalender } from "react-icons/sl";
 import { Link } from "react-router-dom";
 
 const SingleCollegeCard = ({ data }) => {
-    const { collegeName, collegeImg, admissionDates, events, research, sports } = data;
+    const { _id, collegeName, collegeImg, admissionDates, events, research, sports } = data;
     return (
         <div
             className="card w-[95%] glass font-bold text-center mx-auto my-10">
@@ -48,6 +48,7 @@ const SingleCollegeCard = ({ data }) => {
                 <div
                     className="card-actions">
                     <Link
+                        to={`thereCollege/${_id}`}
                         className="btn font-bold btn-wide mx-auto bg-black text-white hover:text-black">
                         See Details
                     </Link>
