@@ -1,5 +1,6 @@
 import { PiStarDuotone } from "react-icons/pi";
 import { FcCalendar, FcSearch } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 const SingleCollege = ({ data }) => {
     const { collegeName, collegeRatings, admissionDate, research, collegeImg } = data;
@@ -34,10 +35,11 @@ const SingleCollege = ({ data }) => {
                 </p>
                 <div
                     className="card-actions">
-                    <button
+                    <Link
+                        to=""
                         className="btn font-bold btn-wide mx-auto bg-black text-white hover:text-black">
                         See Details
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

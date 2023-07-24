@@ -59,7 +59,7 @@ const Login = () => {
 
     return (
         <div
-            className="bg-gradient-to-r from-yellow-50 from-10% via-sky-50 via-30% to-orange-50 to-90%">
+            className="bg-gradient-to-r from-yellow-50 from-10% via-sky-50 via-30% to-orange-50 to-90% pb-10">
             <div
                 className="max-w-7xl mx-auto pt-20">
                 <>
@@ -181,7 +181,7 @@ const Login = () => {
                                                 className="form-control mt-6"
                                                 type="submit">
                                                 <button
-                                                    className="btn bg-yellow-400 text-white font-bold hover:text-black link-hover">
+                                                    className="btn bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90%  font-bold">
                                                     Login
                                                 </button>
                                             </div>

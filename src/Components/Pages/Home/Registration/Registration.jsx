@@ -230,7 +230,7 @@ const Registration = () => {
                                             <div
                                                 className="form-control mt-5">
                                                 <input
-                                                    className="btn bg-yellow-400 text-white hover:text-black"
+                                                    className="btn bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90%"
                                                     type="submit"
                                                     value="Registration" />
                                             </div>

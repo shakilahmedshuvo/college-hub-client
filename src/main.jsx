@@ -17,7 +17,8 @@ import Home from './Components/Pages/Home/Home/Home';
 import PrivateRoute from './Components/Utilities/PrivateRoute/PrivateRoute';
 import WriteReview from './Components/Pages/Home/Review/WriteReview';
 import AdmissionApply from './Components/Pages/Home/Admission/AdmissionApply';
-import Profile from './Components/Pages/Home/NavBar/Profile';
+import Profile from './Components/Pages/Home/Profile/Profile';
+import CollegePage from './Components/Pages/Home/Colleges/CollegePage';
 
 const router = createBrowserRouter([
   {
@@ -30,8 +31,9 @@ const router = createBrowserRouter([
         element: < Home />
       },
       {
-        path: "/profile",
-        element: <Profile />
+        path: "/users/:email",
+        element: <Profile />,
+        loader: ({ params }) => fetch(`http://localhost:5000/users/${params?.email}`)
       },
       {
         path: "/login",
@@ -60,7 +62,11 @@ const router = createBrowserRouter([
       {
         path: "/writeReview",
         element: <PrivateRoute><WriteReview /></PrivateRoute>
-      }
+      },
+      {
+        path: "/CollegePage/:id",
+        element: <CollegePage />
+      },
     ]
   },
 ]);

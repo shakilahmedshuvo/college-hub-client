@@ -57,7 +57,7 @@ const NavBar = () => {
                     <>
                         {/* tooltip show and the profile picture */}
                         <Link
-                            to="/profile"
+                            to={`/users/${user?.email}`}
                             className="tooltip tooltip-bottom flex justify-center items-center font-bold text-lg hover:text-gray-900 hover:text-2xl"
                             data-tip={"Tap Go Your Profile & Edit Profile"}>
                             {user?.displayName}
