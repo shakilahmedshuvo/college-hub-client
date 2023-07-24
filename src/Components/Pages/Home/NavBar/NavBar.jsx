@@ -18,7 +18,7 @@ const NavBar = () => {
 
             })
             .catch(error => console.log(error));
-    }
+    };
 
     // nav item 
     const navBarItems =
@@ -56,17 +56,19 @@ const NavBar = () => {
                 user ?
                     <>
                         {/* tooltip show and the profile picture */}
-                        <div
-                            className="tooltip tooltip-bottom flex justify-center items-center font-bold"
-                            data-tip={user.displayName}>
+                        <Link
+                            to="/profile"
+                            className="tooltip tooltip-bottom flex justify-center items-center font-bold text-lg hover:text-gray-900 hover:text-2xl"
+                            data-tip={"Tap Go Your Profile & Edit Profile"}>
+                            {user.displayName}
                             <img
-                                className="w-12 h-12 rounded-full"
+                                className="w-11 h-11 rounded-full ms-2"
                                 src=
                                 {
                                     user?.photoURL
                                 }
                                 alt="" />
-                        </div>
+                        </Link>
                         <li className="text-lg">
                             <Link
                                 onClick={handleLogOut}
@@ -126,8 +128,9 @@ const NavBar = () => {
                         College Hub
                     </Link>
                 </div>
+                {/* for lg device */}
                 <div
-                    className="navbar-center hidden lg:flex">
+                    className="navbar-center hidden lg:flex ms-16">
                     <ul
                         className="menu menu-horizontal px-1">
                         {navBarItems}
@@ -172,7 +175,7 @@ const NavBar = () => {
                             className="btn btn-ghost lg:hidden">
                             <HiOutlineMenuAlt3 className="text-3xl ms-3" />
                         </label>
-
+                        {/* for md and sm device */}
                         <ul
                             tabIndex={0}
                             className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52 relative right-0 bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90%">

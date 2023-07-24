@@ -17,6 +17,7 @@ import Home from './Components/Pages/Home/Home/Home';
 import PrivateRoute from './Components/Utilities/PrivateRoute/PrivateRoute';
 import WriteReview from './Components/Pages/Home/Review/WriteReview';
 import AdmissionApply from './Components/Pages/Home/Admission/AdmissionApply';
+import Profile from './Components/Pages/Home/NavBar/Profile';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: < Home />
+      },
+      {
+        path: "/profile",
+        element: <Profile />
       },
       {
         path: "/login",
