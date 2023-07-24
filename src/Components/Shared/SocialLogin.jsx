@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Utilities/Hooks/useAuth";
 import googleLogo from "../../assets/logo/google.png"
+import { toast } from "react-hot-toast";
 
 const SocialLogin = () => {
     const { googleSignIn } = useAuth();
@@ -13,10 +14,25 @@ const SocialLogin = () => {
         googleSignIn()
             .then(result => {
                 const loggedInUser = result.user;
-                console.log(loggedInUser);
-                navigate(from, { replace: true });
+                const saveUser =
+                {
+                    name: loggedInUser.displayName,
+                    email: loggedInUser.email
+                }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(from, { replace: true });
+                        toast.success('Your Google Login Successful')
+                    })
             })
-    }
+    };
 
     return (
         <div
