@@ -1,12 +1,25 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
-import SectionTitle from '../../../Shared/SectionTitle';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { MdRateReview } from "react-icons/md";
+import SectionTitle from '../../../Shared/SectionTitle';
+import { useEffect, useState } from 'react';
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const Review = () => {
+    const [data, setData] = useState([]);
+
+    // get the data
+    const url = 'http://localhost:5000/reviews';
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                setData(data)
+            })
+    }, [url]);
+
     return (
         <div
             className='max-w-7xl mx-auto'>
@@ -25,36 +38,48 @@ const Review = () => {
                     navigation={true}
                     modules={[Navigation]}
                     className="mySwiper">
-                    {/* <SwiperSlide> */}
-                    <div className="p-10">
-                        <div
-                            className="grid md:grid-cols-12 mt-6">
-                            <div
-                                className="col-span-1">
-                                <FaQuoteLeft
-                                    className="text-5xl text-slate-500" />
+                    {/* review map SwiperSlide section start */}
+                    {
+                        data.map(data => <SwiperSlide
+                            key={data._id}>
+                            <div className="p-20">
+                                <div
+                                    className="grid md:grid-cols-12 mt-4">
+                                    <div
+                                        className="col-span-1">
+                                        <FaQuoteLeft
+                                            className="text-5xl text-slate-500" />
+                                    </div>
+                                    <div
+                                        className="col-span-10 font-bold p-5 text-slate-800 text-center">
+                                        <h2
+                                            className='text-3xl mb-4'>
+                                            Candidate Name:  {data?.reviewName}
+                                        </h2>
+                                        <h2
+                                            className='text-xs pb-2 text-gray-500'>
+                                            Email: {data?.reviewEmail}
+                                        </h2>
+                                        {/* main review */}
+                                        <h2
+                                            className='text-gray-700'>
+                                            <span
+                                                className='text-xl text-black mr-1'>
+                                                Review:
+                                            </span>
+                                            {data?.review}
+                                        </h2>
+                                    </div>
+                                    <div
+                                        className="col-span-1 flex justify-end place-items-end mt-24">
+                                        <FaQuoteRight
+                                            className="text-5xl text-slate-500" />
+                                    </div>
+                                </div>
                             </div>
-                            {/* review */}
-                            <div
-                                className="col-span-10 font-bold p-5 text-slate-800 text-center">
-                                <h2
-                                    className='text-3xl mb-6'>
-                                    Candidate Name:  Shakil Hossain
-                                </h2>
-                                <h2
-                                className='text-gray-700'>
-                                    <span
-                                    className='text-xl text-black'>Review:</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil vel laboriosam dolor cumque adipisci rerum quo a in, laudantium ad.
-                                </h2>
-                            </div>
-                            <div
-                                className="col-span-1 flex justify-end place-items-end mt-24">
-                                <FaQuoteRight
-                                    className="text-5xl text-slate-500" />
-                            </div>
-                        </div>
-                    </div>
-                    {/* </SwiperSlide> */}
+                        </SwiperSlide>)
+                    }
+                    {/* review map SwiperSlide section end */}
                 </Swiper>
             </div>
         </div>

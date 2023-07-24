@@ -19,7 +19,7 @@ const ResearchPaperTab = () => {
             <TabList>
                 {/* table heading */}
                 <Tab>
-                    ResearchPaper Info and Links
+                    Research Papers Info & Links
                 </Tab>
             </TabList>
             {/* table data */}

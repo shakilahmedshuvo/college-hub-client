@@ -18,7 +18,7 @@ const WriteReview = () => {
         const review = form.review.value;
 
         // get all data
-        const allData = {reviewName,reviewEmail,review};
+        const allData = { reviewName, reviewEmail, review };
 
         // data post to the backend server( mongodb )
         fetch('http://localhost:5000/reviews', {
