@@ -1,7 +1,50 @@
 import { MdRateReview } from "react-icons/md";
 import SectionTitle from "../../../Shared/SectionTitle";
+import useAuth from "../../../Utilities/Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const WriteReview = () => {
+    const { user } = useAuth();
+
+    // handleReview function
+    const handleReview = event => {
+        // stop the form reload
+        event.preventDefault();
+
+        // get the value form the filed
+        const form = event.target;
+        const reviewName = form.reviewName.value;
+        const reviewEmail = form.reviewEmail.value;
+        const review = form.review.value;
+
+        // get all data
+        const allData = {reviewName,reviewEmail,review};
+
+        // data post to the backend server( mongodb )
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(allData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    // swal
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Your Review Post Successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    form.reset();
+                }
+            })
+    }
+
     return (
         <div
             className="bg-gradient-to-r from-yellow-50 from-10% via-sky-50 via-30% to-orange-50 to-90%">
@@ -20,7 +63,7 @@ const WriteReview = () => {
                     </p>
                 </div>
                 <form
-                    // onSubmit={}
+                    onSubmit={handleReview}
                     className="w-[100%] shadow-2xl font-bold mx-auto rounded-xl">
                     <div className="card-body mx-auto">
                         <div
@@ -35,8 +78,9 @@ const WriteReview = () => {
                             </label>
                             <input
                                 type="text"
-                                name="user_name"
+                                name="reviewName"
                                 placeholder="Your Name"
+                                defaultValue={user?.displayName}
                                 className="input input-bordered"
                                 required />
                             {/* email */}
@@ -49,8 +93,9 @@ const WriteReview = () => {
                             </label>
                             <input
                                 type="email"
-                                name="user_email"
+                                name="reviewEmail"
                                 placeholder="Your Email"
+                                defaultValue={user?.email}
                                 className="input input-bordered"
                                 required />
                             {/* Message */}
@@ -58,12 +103,12 @@ const WriteReview = () => {
                                 className="label">
                                 <span
                                     className="label-text">
-                                    * Enter Your Message
+                                    * Enter Your Review
                                 </span>
                             </label>
                             <textarea
-                                name="message"
-                                className="textarea textarea-warning" placeholder="Your Message"
+                                name="review"
+                                className="textarea textarea-warning" placeholder="Your Review"
                                 required />
                         </div>
 
