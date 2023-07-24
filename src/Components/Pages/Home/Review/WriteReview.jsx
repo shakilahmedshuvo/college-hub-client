@@ -15,10 +15,11 @@ const WriteReview = () => {
         const form = event.target;
         const reviewName = form.reviewName.value;
         const reviewEmail = form.reviewEmail.value;
+        const collegeName = form.collegeName.value;
         const review = form.review.value;
 
         // get all data
-        const allData = { reviewName, reviewEmail, review };
+        const allData = { reviewName, reviewEmail, collegeName, review };
 
         // data post to the backend server( mongodb )
         fetch('http://localhost:5000/reviews', {
@@ -96,6 +97,19 @@ const WriteReview = () => {
                                 name="reviewEmail"
                                 placeholder="Your Email"
                                 defaultValue={user?.email}
+                                className="input input-bordered"
+                                required />
+                            <label
+                                className="label">
+                                <span
+                                    className="label-text">
+                                    * Enter Your College Name?
+                                </span>
+                            </label>
+                            <input
+                                type="email"
+                                name="collegeName"
+                                placeholder="Your College Name"
                                 className="input input-bordered"
                                 required />
                             {/* Message */}

@@ -54,11 +54,15 @@ const Review = () => {
                                         className="col-span-10 font-bold p-5 text-slate-800 text-center">
                                         <h2
                                             className='text-3xl mb-4'>
-                                            Candidate Name:  {data?.reviewName}
+                                            Name: {data?.reviewName}
                                         </h2>
                                         <h2
                                             className='text-xs pb-2 text-gray-500'>
                                             Email: {data?.reviewEmail}
+                                        </h2>
+                                        <h2
+                                            className='text-xl mb-4 text-gray-700'>
+                                            College Name: {data?.collegeName}
                                         </h2>
                                         {/* main review */}
                                         <h2
