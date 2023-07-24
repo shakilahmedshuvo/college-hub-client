@@ -3,6 +3,7 @@ import SectionTitle from "../../../Shared/SectionTitle";
 import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import useAuth from "../../../Utilities/Hooks/useAuth";
 import MyCollegeCard from "./MyCollegeCard";
+import { Helmet } from "react-helmet";
 
 const MyCollege = () => {
     const { user } = useAuth();
@@ -23,6 +24,11 @@ const MyCollege = () => {
             <div
                 className="max-w-7xl mx-auto">
                 <div>
+                <Helmet>
+                    <title>
+                        College Hub | My Colleges
+                    </title>
+                </Helmet>
                     <IoCheckmarkDoneCircleOutline className="mx-auto text-6xl" />
                     <SectionTitle
                         heading={"Your Selected Colleges"}

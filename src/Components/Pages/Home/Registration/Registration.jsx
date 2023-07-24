@@ -3,6 +3,7 @@ import SocialLogin from "../../../Shared/SocialLogin";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../Utilities/Hooks/useAuth";
 import { toast } from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Registration = () => {
     const { createUser, updateUserProfile } = useAuth();
@@ -48,6 +49,11 @@ const Registration = () => {
                 className="max-w-7xl mx-auto pt-20">
                 <>
                     <div>
+                        <Helmet>
+                            <title>
+                                College Hub | Registration
+                            </title>
+                        </Helmet>
                         <h2
                             className="text-4xl font-bold text-center text-yellow-400">
                             Please Registration

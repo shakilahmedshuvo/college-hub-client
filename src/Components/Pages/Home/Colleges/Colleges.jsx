@@ -2,6 +2,7 @@ import { FaSchool } from "react-icons/fa";
 import SectionTitle from "../../../Shared/SectionTitle";
 import { useEffect, useState } from "react";
 import SingleCollege from "./SingleCollege";
+import { Helmet } from "react-helmet";
 
 const Colleges = () => {
     // load the data
@@ -18,6 +19,11 @@ const Colleges = () => {
         <div
             className="max-w-7xl mx-auto mt-20">
             <div>
+                <Helmet>
+                    <title>
+                        College Hub | Colleges
+                    </title>
+                </Helmet>
                 <FaSchool className="mx-auto text-6xl mt-14" />
                 <SectionTitle
                     heading={"Our Popular Colleges"}

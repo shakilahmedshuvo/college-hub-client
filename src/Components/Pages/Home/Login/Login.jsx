@@ -4,6 +4,7 @@ import useAuth from "../../../Utilities/Hooks/useAuth";
 import { useRef, useState } from "react";
 import SocialLogin from "../../../Shared/SocialLogin";
 import { toast } from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     // show pass and hide pass
@@ -63,6 +64,11 @@ const Login = () => {
                 className="max-w-7xl mx-auto pt-20">
                 <>
                     <div>
+                        <Helmet>
+                            <title>
+                                College Hub | Login
+                            </title>
+                        </Helmet>
                         <h2
                             className="text-4xl font-bold text-center text-yellow-400">
                             Please Login

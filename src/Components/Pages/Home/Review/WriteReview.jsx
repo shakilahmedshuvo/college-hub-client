@@ -2,6 +2,7 @@ import { MdRateReview } from "react-icons/md";
 import SectionTitle from "../../../Shared/SectionTitle";
 import useAuth from "../../../Utilities/Hooks/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const WriteReview = () => {
     const { user } = useAuth();
@@ -54,6 +55,11 @@ const WriteReview = () => {
                 className="max-w-7xl mx-auto pt-20 pb-10">
                 <div
                     className="mb-4">
+                    <Helmet>
+                        <title>
+                            College Hub | Write Review
+                        </title>
+                    </Helmet>
                     <MdRateReview className="mx-auto text-6xl" />
                     <SectionTitle
                         heading={"Write a Review"}
@@ -125,7 +131,7 @@ const WriteReview = () => {
                             <input
                                 type="number"
                                 name="reviewRatings"
-                                min="0" 
+                                min="0"
                                 max="5"
                                 step="any"
                                 placeholder="Enter Ratings Out Of 5"

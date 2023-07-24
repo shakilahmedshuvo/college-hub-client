@@ -4,6 +4,7 @@ import useAuth from "../../../Utilities/Hooks/useAuth";
 import { LiaGraduationCapSolid } from "react-icons/lia";
 import { useEffect, useState } from "react";
 import AdmissionTable from "./AdmissionTable";
+import { Helmet } from "react-helmet";
 
 const Admission = () => {
     const { user } = useAuth();
@@ -24,6 +25,11 @@ const Admission = () => {
             <div
                 className="max-w-7xl mx-auto pt-20">
                 <div>
+                    <Helmet>
+                        <title>
+                            College Hub | Admission
+                        </title>
+                    </Helmet>
                     <LiaGraduationCapSolid className="mx-auto text-6xl" />
                     <SectionTitle
                         heading={"Admission"}

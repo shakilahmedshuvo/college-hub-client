@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import SectionTitle from "../../../Shared/SectionTitle";
 import useAuth from "../../../Utilities/Hooks/useAuth";
 import { LiaGraduationCapSolid } from "react-icons/lia";
+import { Helmet } from "react-helmet";
 
 const AdmissionApply = () => {
     const { user } = useAuth();
@@ -56,6 +57,11 @@ const AdmissionApply = () => {
             <div
                 className="max-w-7xl mx-auto pt-20">
                 <div>
+                    <Helmet>
+                        <title>
+                            College Hub | Admission Apply
+                        </title>
+                    </Helmet>
                     <LiaGraduationCapSolid className="mx-auto text-6xl" />
                     <SectionTitle
                         heading={"Apply For Admission"}
@@ -177,8 +183,8 @@ const AdmissionApply = () => {
                                 required />
                         </div>
                     </div>
-                    <div 
-                     className="form-control mt-6 lg:mx-0 mx-4">
+                    <div
+                        className="form-control mt-6 lg:mx-0 mx-4">
                         <input
                             className="btn border-0 bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90% btn-block font-bold my-2"
                             type="submit"
