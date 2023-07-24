@@ -6,7 +6,7 @@ import SingleCollegeCard from "./SingleCollegeCard";
 const BestCollege = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/college')
+        fetch('https://college-hub-server-hazel.vercel.app/college')
             .then(res => res.json())
             .then(data => {
                 setData(data)

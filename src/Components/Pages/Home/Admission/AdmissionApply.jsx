@@ -27,7 +27,7 @@ const AdmissionApply = () => {
         const allData = { name, email, phone, address, collegeName, subject, date, imgURL };
 
         // data post to the backend server( mongodb )
-        fetch('http://localhost:5000/admission', {
+        fetch('https://college-hub-server-hazel.vercel.app/admission', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

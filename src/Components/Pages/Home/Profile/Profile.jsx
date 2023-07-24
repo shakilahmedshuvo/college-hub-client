@@ -3,7 +3,7 @@ import useAuth from "../../../Utilities/Hooks/useAuth";
 import SectionTitle from "../../../Shared/SectionTitle";
 import Swal from "sweetalert2";
 import { useLoaderData } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
 
 const Profile = () => {
     const { user } = useAuth();
@@ -16,17 +16,7 @@ const Profile = () => {
 
     // get the users data
     const data = useLoaderData();
-    const { _id, phone, address, collegeName,subject } = data;
-    // const [data, setData] = useState([]);
-    // const url = `http://localhost:5000/users/${user?.email}`;
-    // useEffect(() => {
-    //     fetch(url)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setData(data)
-    //             // console.log(data);
-    //         })
-    // }, [url]);
+    const { _id, phone, address, collegeName, subject } = data;
 
     // handleUpdate function
     const handleUpdate = event => {
@@ -45,7 +35,7 @@ const Profile = () => {
         // console.log(allDataUpdate);
 
         // data post to the backend server( mongodb )
-        fetch(`http://localhost:5000/users/${user?.email}`, {
+        fetch(`https://college-hub-server-hazel.vercel.app/users/${user?.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -73,12 +63,11 @@ const Profile = () => {
             <div
                 className="max-w-7xl mx-auto pt-20">
                 <div>
-                    {/* <Helmet>
+                    <Helmet>
                         <title>
                             College Hub | Profile
                         </title>
-                    </Helmet> */}
-                    {/* <CgProfile className="mx-auto text-6xl" /> */}
+                    </Helmet>
                     <SectionTitle
                         heading={"My Profile"}
                     ></SectionTitle>
@@ -238,7 +227,7 @@ const Profile = () => {
                                     <input
                                         className="btn border-0 bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90% btn-block font-bold my-2"
                                         type="submit"
-                                        value="Submit" />
+                                        value="Save" />
                                 </div>
                             </form>
                         </div>

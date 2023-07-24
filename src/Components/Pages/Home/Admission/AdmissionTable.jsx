@@ -23,7 +23,7 @@ const AdmissionTable = ({ data }) => {
                 </td>
                 <th>
                     <Link
-                         to={`/admissionApply/${id}`}
+                        to={`/admissionApply/${id}`}
                         className="btn bg-gradient-to-r from-yellow-200 from-10% via-sky-200 via-30% to-orange-200 to-90% px-10 font-bold">
                         Apply
                     </Link>

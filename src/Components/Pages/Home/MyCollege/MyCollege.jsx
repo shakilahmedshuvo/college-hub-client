@@ -9,7 +9,7 @@ const MyCollege = () => {
     const { user } = useAuth();
     const [data, setData] = useState([]);
 
-    const url = `http://localhost:5000/admission?email=${user?.email}`;
+    const url = `https://college-hub-server-hazel.vercel.app/admission?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

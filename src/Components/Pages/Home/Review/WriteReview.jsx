@@ -24,7 +24,7 @@ const WriteReview = () => {
         const allData = { reviewName, reviewEmail, collegeName, review, reviewRatings };
 
         // data post to the backend server( mongodb )
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://college-hub-server-hazel.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

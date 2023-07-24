@@ -12,7 +12,7 @@ const Admission = () => {
     // load the data
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/bestCollege')
+        fetch('https://college-hub-server-hazel.vercel.app/bestCollege')
             .then(res => res.json())
             .then(data => {
                 setData(data)

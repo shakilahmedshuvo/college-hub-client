@@ -11,7 +11,7 @@ const Review = () => {
     const [data, setData] = useState([]);
 
     // get the data
-    const url = 'http://localhost:5000/reviews';
+    const url = 'https://college-hub-server-hazel.vercel.app/reviews';
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

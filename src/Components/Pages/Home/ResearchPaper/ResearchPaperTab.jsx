@@ -8,7 +8,7 @@ const ResearchPaperTab = () => {
 
     // toy one
     useEffect(() => {
-        fetch('http://localhost:5000/researchPaper')
+        fetch('https://college-hub-server-hazel.vercel.app/researchPaper')
             .then(res => res.json())
             .then(data => setData(data))
     }, []);

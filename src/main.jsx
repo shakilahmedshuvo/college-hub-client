@@ -19,6 +19,7 @@ import WriteReview from './Components/Pages/Home/Review/WriteReview';
 import AdmissionApply from './Components/Pages/Home/Admission/AdmissionApply';
 import Profile from './Components/Pages/Home/Profile/Profile';
 import CollegePage from './Components/Pages/Home/Colleges/CollegePage';
+import CollegeDetails from './Components/Pages/Home/Colleges/CollegeDetails';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: "/users/:email",
         element: <Profile />,
-        loader: ({ params }) => fetch(`http://localhost:5000/users/${params?.email}`)
+        loader: ({ params }) => fetch(`https://college-hub-server-hazel.vercel.app/users/${params?.email}`)
       },
       {
         path: "/login",
@@ -60,12 +61,17 @@ const router = createBrowserRouter([
         element: <Colleges />
       },
       {
+        path: "/colleges/:id",
+        element: <CollegeDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/bestCollege/${params._id}`)
+      },
+      {
         path: "/writeReview",
         element: <PrivateRoute><WriteReview /></PrivateRoute>
       },
       {
-        path: "/CollegePage/:id",
-        element: <CollegePage />
+        path: "/writeReview",
+        element: <PrivateRoute><WriteReview /></PrivateRoute>
       },
     ]
   },
