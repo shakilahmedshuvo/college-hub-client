@@ -20,6 +20,17 @@ const NavBar = () => {
             .catch(error => console.log(error));
     };
 
+
+    // const { data, setData } = useState([]);
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/users/${user?.email}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             // setData(data)
+    //             console.log(data);
+    //         })
+    // }, [setData, user?.email]);
+
     // nav item 
     const navBarItems =
         <>

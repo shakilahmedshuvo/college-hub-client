@@ -9,10 +9,10 @@ const Profile = () => {
     const { user } = useAuth();
 
     // get the options value
-    const [options, setOptions] = useState('');
-    const handleOptions = (e) => {
-        setOptions(e.target.value);
-    };
+    // const [options, setOptions] = useState('');
+    // const handleOptions = (e) => {
+    //     setOptions(e.target.value);
+    // };
 
     // get the users data
     const data = useLoaderData();
@@ -29,9 +29,10 @@ const Profile = () => {
         const address = form.address.value;
         const collegeName = form.collegeName.value;
         const subject = form.subject.value;
-        const options = form.options.value;
+        // const options = form.options.value;
 
-        const allDataUpdate = { phone, address, collegeName, subject, options };
+        // const allDataUpdate = { phone, address, collegeName, subject, options };
+        const allDataUpdate = { phone, address, collegeName, subject };
         // console.log(allDataUpdate);
 
         // data post to the backend server( mongodb )
@@ -48,9 +49,8 @@ const Profile = () => {
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success',
-                        text: 'Profile Successfully Update',
-                        icon: 'success',
-                        confirmButtonText: 'Updated'
+                        text: 'Profile Successfully Updated',
+                        icon: 'success'
                     })
                     form.reset();
                 }
@@ -197,7 +197,7 @@ const Profile = () => {
                                             required />
                                     </div>
                                     {/* options for gender */}
-                                    <div className="form-control">
+                                    {/* <div className="form-control">
                                         <label className="label">
                                             <span
                                                 className="label-text">
@@ -220,7 +220,7 @@ const Profile = () => {
                                                 Female
                                             </option>
                                         </select>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div
                                     className="form-control mt-6 lg:mx-0 mx-4">
