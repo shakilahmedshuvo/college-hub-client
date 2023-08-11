@@ -100,11 +100,12 @@ const WriteReview = () => {
                                 </span>
                             </label>
                             <input
+                                readOnly
                                 type="text"
                                 name="reviewEmail"
                                 placeholder="Enter Email"
                                 defaultValue={user?.email}
-                                className="input input-bordered"
+                                className="input input-bordered text-slate-400"
                                 required />
                         </div>
                         <div className="form-control">
