@@ -57,10 +57,6 @@ const Review = () => {
                                             Name: {data?.reviewName}
                                         </h2>
                                         <h2
-                                            className='text-xs pb-2 text-gray-500'>
-                                            Email: {data?.reviewEmail}
-                                        </h2>
-                                        <h2
                                             className='text-xl mb-2 text-gray-700'>
                                             College Name: {data?.collegeName}
                                         </h2>
